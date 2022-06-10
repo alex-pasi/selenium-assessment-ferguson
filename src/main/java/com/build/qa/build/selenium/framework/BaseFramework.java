@@ -53,6 +53,7 @@ public abstract class BaseFramework {
 			capabilities = DesiredCapabilities.chrome();
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(capabilities);
+			driver.manage().window().maximize();
 		} else if (DRIVER_FIREFOX.equalsIgnoreCase(configuration.getProperty("BROWSER"))) {
 			capabilities = DesiredCapabilities.firefox();
 			driver = new FirefoxDriver(capabilities);
